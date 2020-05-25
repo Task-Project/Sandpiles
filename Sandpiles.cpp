@@ -6,9 +6,11 @@
 using namespace std;
 
 //w incrise the widht of the cells
-int fx=1250,fy=1250,sx=50,sy=50,w=15,x,y,col=15,RAK=4;
-int mx=(fx)/w;
-int my=(fy)/w;
+DWORD fx=GetSystemMetrics(SM_CXSCREEN);
+DWORD fy=GetSystemMetrics(SM_CYSCREEN);
+int sx=50,sy=50,w=15,x,y,col=15,RAK=4;
+int mx=(fx-100)/w;
+int my=(fy-150)/w;
 
 void draw_matrix(int x,int y,int w){
 	setcolor(col);
@@ -28,7 +30,6 @@ main(){
 	cout<<"Insert a number between 5 and 20 to set the widht of the cells"<<endl;
 	cin>>w;
 	if(ch=='n'){
-		cin>>w;
 		initwindow(fx+100,fy+100);
 		draw_matrix(mx,my,w);
 		long long mat[mx][my];
